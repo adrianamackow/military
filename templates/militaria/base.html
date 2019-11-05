@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'militaria/style.css' %}">
+    <title>{% block title %} Magazyny {% endblock %}</title>
+</head>
+
+<body>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href=""><img alt="Home" src="{% static "militaria/home.jpg" %}"  title="Strona centralna" width="40" height="40" ></a></li>
+
+            <li><a href="/blog/"><img src="{% static "militaria/telefon.png" %}" alt="Kontakt" title="Kontakt z tworcami" width="40" height="40" ></a></li>
+             {% if user.is_authenticated %}
+                <li style="float:right"><a href="/militaria/logout"> <img src="{% static "militaria/log_out.png" %}" alt="Log out" title="Wylogowywanie" width="40" height="40" ></a>
+             {% else %}
+                 <li style="float:right"><a href="/militaria/register/">Rejestracja</a></li>
+                <li style="float:right"><a class="active" href="/militaria/login/">Zaloguj</a></li>
+             {% endif %}
+
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

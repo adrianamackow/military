@@ -1,0 +1,13 @@
+{% extends "militaria/base.html" %}
+
+{% block title %}My amazing blog{% endblock %}
+
+{% block content %}
+    <h1>Create New Account</h1>
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Register</button>
+    </form>
+
+{% endblock %}

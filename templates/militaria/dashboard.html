@@ -1,0 +1,42 @@
+{% extends "militaria/base.html" %}
+{% load static %}
+{% load mathfilters %}
+{% block title %}My amazing blog{% endblock %}
+
+{% block content %}
+    <div class="all_warehouses" style="overflow-y: scroll">
+        <h1>MAGAZYN - {{ request.user }} </h1>
+        {% for warehouse in warehouses %}
+            <div class="warehouse">
+                <p>{{ warehouse.name }}</p>
+                <p>{{ warehouse.how_many }}%</p>
+                {% if warehouse.how_many > warehouse.max %}
+                    <p style="color: green">+{{warehouse.how_many|sub:warehouse.max }}%</p>
+                {%  elif warehouse.how_many < warehouse.min %}
+                    <p style="color: red">{{warehouse.how_many|sub:warehouse.min }}%</p>
+                {% else %}
+                    <p style="color: orange">+{{warehouse.how_many|sub:warehouse.min }}%</p>
+                {% endif %}
+                <div class="ware">
+                    <div class="ware_level" style="width: {{ warehouse.how_many }}%; background-color: {{ warehouse.get_warehouse_fill_code }}"></div>
+                    <div class="left_marker" style="position: absolute; left: {{ warehouse.min|sub:1}}%; width: {{warehouse.max|sub:warehouse.min }}%"></div>
+                </div>
+            </div>
+        {% endfor %}
+{#        <button type="button"><a href="/blog/">Dodaj</a></button>#}
+        <div class="buttons_dasboard">
+            <form method="get" action="/militaria/add">
+                <button type="submit">Dodaj</button>
+            </form>
+            <form method="get" action="/militaria/modify">
+                <button type="submit">Modyfikuj</button>
+            </form>
+            <form method="get" action="/militaria/delete">
+                <button type="submit">Usun</button>
+            </form>
+            <form method="get" action="/militaria/supply">
+                <button type="plane" style="background-color: lawngreen"><img src="{% static "militaria/plane.png" %}" height="30%" width="30%" style="transform: rotate(90deg)"></button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
