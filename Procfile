@@ -1,1 +1,1 @@
-web: gunicorn militaria.wsgi
+web: gunicorn two.wsgi
