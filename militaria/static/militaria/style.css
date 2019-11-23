@@ -77,9 +77,9 @@ h1
 {
     background: rgba(0,0,0,0);
     border-style: dashed;
-    border-left-color: red;
+    border-left-color: #ff153c;
     border-left-width: 10px;
-    border-right-color: green;
+    border-right-color: #99dcbb;
     border-right-width: 10px;
     border-top-width: 0;
     border-bottom-width: 0;

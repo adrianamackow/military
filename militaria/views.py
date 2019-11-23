@@ -64,10 +64,6 @@ def Supply(request):
     def get_ratio(high, priority):
         return (100 - high) * priority
 
-    # amunicja = Warehouse(name="amunicja", how_many=30, low=45, high=60, weight=5, priority=2)
-    # jedzenie = Warehouse(name="jedzenie", how_many=50, low=60, high=72, weight=2, priority=3)
-    # paliwo = Warehouse(name="paliwo", how_many=68, low=77, high=89, weight=3, priority=2)
-
     PLANE_MAX = 100
     necessary = 0
 

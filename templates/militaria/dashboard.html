@@ -10,9 +10,9 @@
             <div class="warehouse">
                 <p>{{ warehouse.name }}</p>
                 <p>{{ warehouse.how_many }}%</p>
-                {% if warehouse.how_many > warehouse.max %}
+                {% if warehouse.how_many >= warehouse.max %}
                     <p style="color: #99dcbb">+{{warehouse.how_many|sub:warehouse.max }}%</p>
-                {%  elif warehouse.how_many < warehouse.min %}
+                {%  elif warehouse.how_many <= warehouse.min %}
                     <p style="color: #ff153c">{{warehouse.how_many|sub:warehouse.min }}%</p>
                 {% else %}
                     <p style="color: #fffab7">+{{warehouse.how_many|sub:warehouse.min }}%</p>
