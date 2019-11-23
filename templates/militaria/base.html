@@ -10,15 +10,19 @@
     <div id="sidebar">
         {% block sidebar %}
         <ul>
-            <li><a href="/militaria/"><img alt="Home" src="{% static "militaria/home.jpg" %}"  title="Strona centralna" width="60" height="60" ></a></li>
+            <li><a href="/militaria/"><img alt="Home" src="{% static "militaria/home.png" %}"  title="Strona centralna" width="60" height="60" ></a></li>
 
-            <li><a href="/militaria/contact/"><img src="{% static "militaria/telefon.png" %}" alt="Kontakt" title="Kontakt z tworcami" width="60" height="60" ></a></li>
+            <li><a href="/militaria/contact/"><img src="{% static "militaria/message.png" %}" alt="Kontakt" title="Kontakt z tworcami" width="60" height="60" ></a></li>
+
+            <li><a href="/militaria/dashboard/"><img src="{% static "militaria/boxes.png" %}" alt="Magazyny" title="Stan magazynów" width="60" height="60" ></a></li>
              {% if user.is_authenticated %}
                 <li style="float:right"><a href="/militaria/logout"> <img src="{% static "militaria/log_out.png" %}" alt="Log out" title="Wylogowywanie" width="60" height="60" ></a>
              {% else %}
                 <li style="float:right"><a href="/militaria/register/"> <img src="{% static "militaria/sign_up.jpg" %}" alt="Rejestracja" title="Rejestracja" width="60" height="60" ></a></li>
                 <li style="float:right"><a href="/militaria/login/"><img src="{% static "militaria/log_in.png" %}" alt="Log in" title="Logowanie" width="60" height="60" ></a></li>
              {% endif %}
+            <li style="float:right"><a href="https://www.instagram.com/a.driaana"><img src="{% static "militaria/insta.png" %}" alt="Instagram" title="Instagram" width="60" height="60" ></a></li>
+             <li style="float:right"><a href="https://www.instagram.com/a.driaana"><img src="{% static "militaria/facebook.png" %}" alt="Facebook" title="Facebook" width="60" height="60" ></a></li>
 
         </ul>
         {% endblock %}

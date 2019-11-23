@@ -101,4 +101,9 @@ def Supply(request):
             break
     for x in all_warehouses:
         print(x.name, x.how_many)
+        x.save()
     return render(request, 'militaria/supply.html', context)
+
+
+def contactView(request):
+    return render(request, 'militaria/contact.html')
