@@ -46,6 +46,7 @@ def AddWarehouse(request):
             return redirect('/militaria/dashboard/')
     else:
         form = WarehouseForm()
+    print(form)
     return render(request, 'militaria/add.html', {'form': form })
 
 
