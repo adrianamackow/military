@@ -51,9 +51,9 @@ def AddWarehouse(request):
 
 def Supply(request):
     all_warehouses = Warehouse.objects.filter(user=request.user)
-    low_level = [x for x in all_warehouses if x.get_warehouse_fill_code() == 'red']
-    medium_level = [x for x in all_warehouses if x.get_warehouse_fill_code() == 'orange']
-    high_level = [x for x in all_warehouses if x.get_warehouse_fill_code() == 'green']
+    low_level = [x for x in all_warehouses if x.get_warehouse_fill_code() == '#ff153c']
+    medium_level = [x for x in all_warehouses if x.get_warehouse_fill_code() == '#fffab7']
+    high_level = [x for x in all_warehouses if x.get_warehouse_fill_code() == '#99dcbb']
     context = {
         "low_level": low_level,
         "medium_level": medium_level,

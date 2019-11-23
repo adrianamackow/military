@@ -3,11 +3,16 @@
 {% block title %}My amazing blog{% endblock %}
 
 {% block content %}
-    <h1>Create New Account</h1>
+
     <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button>Register</button>
+        <div class="all_warehouses">
+            <h1>Create New Account</h1>
+            <div class="registration">
+                {{ form.as_p }}
+            </div>
+            <button>Register</button>
+        </div>
     </form>
 
 {% endblock %}

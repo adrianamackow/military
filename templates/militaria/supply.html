@@ -6,7 +6,7 @@
 {% block content %}
         <div class="all_warehouses">
             <h1>DOSTAWA - {{ request.user }} </h1>
-            <h2>LOW</h2>
+            <h2>NISKI POZIOM</h2>
                 {% for low in low_level %}
                     <p>{{ low }}</p>
                     <p>{{ low.weight }}</p>
@@ -14,7 +14,7 @@
                 {% endfor %}
         </div>
 {#     <div class="all_warehouses">#}
-{#            <h2>MEDIUM</h2>#}
+{#            <h2>SREDNI POZIOM</h2>#}
 {#                {% for medium in medium_level %}#}
 {#                    <p>{{ medium }}</p>#}
 {#                    <p>{{ medium.priority }}</p>#}
@@ -22,10 +22,9 @@
 {#                {% endfor %}#}
 {#     </div>#}
 {#     <div class="all_warehouses">#}
-{#            <h2>HIGH</h2>#}
+{#            <h2>WYSOKI POZIOM</h2>#}
 {#            {% for high in high_level %}#}
 {#                <p>{{ high }}</p>#}
 {#            {% endfor %}#}
 {#     </div>#}
-    <img src="{% static "militaria/plane.png" %}" />
 {% endblock %}

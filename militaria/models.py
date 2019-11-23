@@ -19,9 +19,9 @@ class Warehouse(models.Model):
     def get_warehouse_fill_code(self):
         if self.how_many >= self.min:
             if self.how_many < self.max:
-                return 'orange'    # orange
+                return '#fffab7'    # orange
             else:
-                return 'green'    # green
+                return '#99dcbb'    # green
         else:
-            return 'red'        # red
+            return '#ff153c'       # red
 

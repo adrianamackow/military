@@ -10,14 +10,14 @@
     <div id="sidebar">
         {% block sidebar %}
         <ul>
-            <li><a href=""><img alt="Home" src="{% static "militaria/home.jpg" %}"  title="Strona centralna" width="40" height="40" ></a></li>
+            <li><a href="/militaria/"><img alt="Home" src="{% static "militaria/home.jpg" %}"  title="Strona centralna" width="60" height="60" ></a></li>
 
-            <li><a href="/blog/"><img src="{% static "militaria/telefon.png" %}" alt="Kontakt" title="Kontakt z tworcami" width="40" height="40" ></a></li>
+            <li><a href="/militaria/contact/"><img src="{% static "militaria/telefon.png" %}" alt="Kontakt" title="Kontakt z tworcami" width="60" height="60" ></a></li>
              {% if user.is_authenticated %}
-                <li style="float:right"><a href="/militaria/logout"> <img src="{% static "militaria/log_out.png" %}" alt="Log out" title="Wylogowywanie" width="40" height="40" ></a>
+                <li style="float:right"><a href="/militaria/logout"> <img src="{% static "militaria/log_out.png" %}" alt="Log out" title="Wylogowywanie" width="60" height="60" ></a>
              {% else %}
-                 <li style="float:right"><a href="/militaria/register/">Rejestracja</a></li>
-                <li style="float:right"><a class="active" href="/militaria/login/">Zaloguj</a></li>
+                <li style="float:right"><a href="/militaria/register/"> <img src="{% static "militaria/sign_up.jpg" %}" alt="Rejestracja" title="Rejestracja" width="60" height="60" ></a></li>
+                <li style="float:right"><a href="/militaria/login/"><img src="{% static "militaria/log_in.png" %}" alt="Log in" title="Logowanie" width="60" height="60" ></a></li>
              {% endif %}
 
         </ul>
