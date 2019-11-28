@@ -1,3 +1,5 @@
+## WORK IN PROGRESS
+
 ## General info
 Simple web app for supply problem.
 Algorithm returns number of planes neccesary to supply created/customized things and fill these planes in 100% with additional objects. (optimalization -> priority, weight, warehouse state, level, plane's limit etc... 
