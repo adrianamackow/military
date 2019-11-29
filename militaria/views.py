@@ -14,7 +14,7 @@ def index(request):
     return render(request, 'militaria/index.html')
 
 
-@login_required()
+@login_required(login_url='/militaria/login/')
 def dashboardView(request):
     warehouses = Warehouse.objects.filter(user=request.user)
     context = {
@@ -25,7 +25,7 @@ def dashboardView(request):
 
 def registerView(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserCreationForm(request.POST, help_texts=None)
         if form.is_valid():
             form.save()
             return redirect('/militaria/login/')

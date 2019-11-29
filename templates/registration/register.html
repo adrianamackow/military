@@ -7,22 +7,11 @@
     {% csrf_token %}
         <div class="all_warehouses">
             <h1>Create New Account</h1>
-{#            <div class="registration">#}
-{#                {{ form.as_p }}#}
-{#            </div>#}
-             {% for field in form %}
-              <p>
-                {{ field.label_tag }}<br>
-                {{ field }}
-                {% if field.help_text %}
-                     <p hidden>{{ field.help_text }}</p>
-{#                  <small style="color: grey" hidden="True">{{ field.help_text }}</small>#}
-                {% endif %}
-                {% for error in field.errors %}
-                  <p hidden>{{ error }}</p>
-                {% endfor %}
-              </p>
-            {% endfor %}
+            <div class="registration">
+                <p><label for="id_username">LOGIN: {{ form.username }}</label></p>
+                <p><label for="id_password">HASŁO: {{ form.password1 }}</label></p>
+                <p><label for="id_password">POTWIERDŹ: {{ form.password2 }}</label></p>
+            </div>
             <button>Register</button>
         </div>
     </form>

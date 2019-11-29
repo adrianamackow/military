@@ -11,5 +11,5 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('add/', views.AddWarehouse, name="new"),
     path('supply/', views.Supply, name='supply'),
-    path('contact/', views.contactView, name="contact")
+    path('contact/', views.contactView, name="contact"),
     ]
