@@ -7,6 +7,7 @@ Every object has own priority and weight
 Every Warehouse has three levels of state (low, medium, high)
 Every plane is weight limited (default: 100, can be changed in script)
 
+- [ ] After supply - generating PDF raport with all informations
 
 ## Technologies
 Project created with:

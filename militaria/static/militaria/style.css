@@ -109,10 +109,10 @@ li a {
 }
 
 li a:hover {
-    background-color: #778899;
+    background-color: #669999;
 }
 .active {
-    background-color: #778899;
+    background-color: #669999;
 }
 .registration {
     box-sizing: border-box;
