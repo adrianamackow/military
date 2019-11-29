@@ -75,12 +75,12 @@ h1
 
 .left_marker
 {
-    background: rgba(0,0,0,0);
+    background: rgba(47, 47, 79, 0.5);
     border-style: dashed;
     border-left-color: #ff153c;
-    border-left-width: 10px;
+    border-left-width: 2px;
     border-right-color: #99dcbb;
-    border-right-width: 10px;
+    border-right-width: 2px;
     border-top-width: 0;
     border-bottom-width: 0;
     width: 100%;
@@ -139,7 +139,7 @@ img {
     size: 1px;
 }
 button {
-    width: 20%;
+    width: 80%;
     padding: 5px 5px 5px 5px;
     margin: 30px 10px 10px 10px;
     box-sizing: border-box;
@@ -182,7 +182,7 @@ input[type=password] {
 }
 button[type=submit]
 {
-    width: 20%;
+    width: 30%;
     padding: 5px 5px 5px 5px;
     margin: 8px 10px 10px 10px;
     box-sizing: border-box;
@@ -192,4 +192,17 @@ button[type=submit]
     font-family: sans-serif;
     cursor: pointer;
     display: inline;
+}
+
+.box_all {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-box-container{
+    flex: 4;
+}
+
+.button-box-container2{
+    flex: 1;
 }

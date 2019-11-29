@@ -3,16 +3,27 @@
 {% block title %}My amazing blog{% endblock %}
 
 {% block content %}
-
     <form method="POST">
     {% csrf_token %}
         <div class="all_warehouses">
             <h1>Create New Account</h1>
-            <div class="registration">
-                {{ form.as_p }}
-            </div>
+{#            <div class="registration">#}
+{#                {{ form.as_p }}#}
+{#            </div>#}
+             {% for field in form %}
+              <p>
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% if field.help_text %}
+                     <p hidden>{{ field.help_text }}</p>
+{#                  <small style="color: grey" hidden="True">{{ field.help_text }}</small>#}
+                {% endif %}
+                {% for error in field.errors %}
+                  <p hidden>{{ error }}</p>
+                {% endfor %}
+              </p>
+            {% endfor %}
             <button>Register</button>
         </div>
     </form>
-
 {% endblock %}

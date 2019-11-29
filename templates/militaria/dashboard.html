@@ -12,18 +12,18 @@
                 <p>{{ warehouse.how_many }}%</p>
                 {% if warehouse.how_many >= warehouse.max %}
                     <p style="color: #99dcbb">+{{warehouse.how_many|sub:warehouse.max }}%</p>
-                {%  elif warehouse.how_many <= warehouse.min %}
+                {% elif warehouse.how_many <= warehouse.min %}
                     <p style="color: #ff153c">{{warehouse.how_many|sub:warehouse.min }}%</p>
                 {% else %}
                     <p style="color: #fffab7">+{{warehouse.how_many|sub:warehouse.min }}%</p>
                 {% endif %}
                 <div class="ware">
                     <div class="ware_level" style="width: {{ warehouse.how_many }}%; background-color: {{ warehouse.get_warehouse_fill_code }}"></div>
-                    <div class="left_marker" style="position: absolute; left: {{ warehouse.min|sub:1}}%; width: {{warehouse.max|sub:warehouse.min }}%"></div>
+                    <div class="left_marker" style="position: absolute; left: {{ warehouse.min|sub:3}}%; width: {{warehouse.max|sub:warehouse.min }}%"></div>
                 </div>
             </div>
         {% endfor %}
-        <div class="boxx">
+        <div class="box_all">
         <div class="button-box-container">
             <div class="button-box">
                 <form method="get" action="/militaria/add">
@@ -43,7 +43,7 @@
         </div>
             <div class="button-box-container2">
                 <form method="get" action="/militaria/supply">
-                    <button type="plane"><img src="{% static "militaria/plane.png" %}" height="45%" width="45%" style="transform: rotate(90deg)"></button>
+                    <button type="plane"><img src="{% static "militaria/plane.png" %}" height="50%" width="50%" style="transform: rotate(90deg)"></button>
                 </form>
             </div>
         </div>
