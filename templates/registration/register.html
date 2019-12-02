@@ -6,13 +6,13 @@
     <form method="POST">
     {% csrf_token %}
         <div class="all_warehouses">
-            <h1>Create New Account</h1>
+            <h1>Stwórz nowe konto</h1>
             <div class="registration">
                 <p><label for="id_username">LOGIN: {{ form.username }}</label></p>
                 <p><label for="id_password">HASŁO: {{ form.password1 }}</label></p>
                 <p><label for="id_password">POTWIERDŹ: {{ form.password2 }}</label></p>
             </div>
-            <button>Register</button>
+            <button type="submit">Rejestracja</button>
         </div>
     </form>
 {% endblock %}

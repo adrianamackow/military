@@ -1,9 +1,12 @@
 {% extends "militaria/base.html" %}
 
-{% block title %}My amazing blog{% endblock %}
+{% block title %}Index{% endblock %}
 
 {% block content %}
     <div class="all_warehouses">
-            <h1>Ostatnie zmiany we wszystkich magazynach</h1>
-        </div>
+        <h1>Aktualności ze świata</h1>
+        {% for link, res in results %}
+            <p><a href={{ link }}>{{ res }}</a></p>
+        {% endfor %}
+    </div>
 {% endblock %}

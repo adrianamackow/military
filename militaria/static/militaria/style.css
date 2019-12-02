@@ -206,3 +206,19 @@ button[type=submit]
 .button-box-container2{
     flex: 1;
 }
+
+a:link {
+  color: #6abca3;
+}
+
+a:visited {
+  color: #6abca3;
+}
+
+a:hover {
+  color: #d0ffe6;
+}
+
+a:active {
+  color: rgba(255, 255, 255, 0);
+}

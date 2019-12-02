@@ -8,10 +8,20 @@ from .models import Warehouse
 from .forms import WarehouseForm
 import json
 import math
+import requests
+from bs4 import BeautifulSoup
+import re
 
 
 def index(request):
-    return render(request, 'militaria/index.html')
+    content = requests.get("https://www.defence24.pl/wiadomosci/")
+    soup = BeautifulSoup(content.content, 'html.parser')
+    results = soup.find('ul', class_='main-news-list mt-30')
+    results = re.findall(r'<a href="(.*)" title="(.*)"><span.*', str(results))
+    context = {
+        "results": results[:6]
+    }
+    return render(request, 'militaria/index.html', context)
 
 
 @login_required(login_url='/militaria/login/')
