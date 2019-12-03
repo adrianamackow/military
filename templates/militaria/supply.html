@@ -8,7 +8,7 @@
                 {% if low_level|length == 0 %}
                     <h1>MAGAZYNY ZAPEŁNIONE</h1>
                 {% else %}
-                <h1>UŻYWKOWNIK: {{ request.user }} </h1>
+                <h1>UŻYTKOWNIK: {{ request.user }} </h1>
                 <h2>RAPORT Z DOSTAWY</h2>
                 {% for low in low_level %}
                     <p>{{ low }}</p>
@@ -21,10 +21,13 @@
                     <form method="get" action="/militaria/dashboard">
                         <button type="submit">WRÓĆ</button>
                     </form>
+                    {% if low_level|length != 0 %}
+                        <form method="get" action="{% static "report.pdf" %}">
+                             <button type="submit" style="background: greenyellow">POBIERZ PDF</button>
+                        </form>
+                    {% endif %}
                 </div>
             </div>
         </div>
-    <form method="get" action="{% static "/militaria/raport.pdf" %}">
-   <button type="submit">Download!</button>
-</form>
+
 {% endblock %}

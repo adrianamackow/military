@@ -11,6 +11,8 @@ import math
 import requests
 from bs4 import BeautifulSoup
 import re
+from fpdf import FPDF
+from datetime import date, datetime
 
 
 def index(request):
@@ -86,13 +88,19 @@ def Supply(request):
     for x in all_warehouses:
         x.how_many = x.max
         print(x.name, get_ratio(x.max, x.priority))
-
-    print("dostawa: {}".format(necessary))
-    print("pojemność samolotu: {}".format(PLANE_MAX))
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=20)
+    pdf.cell(200, 10, txt="Dostawa z dnia: {}".format(datetime.now().strftime("%d-%m-%Y, %H:%M")), ln=1, align="C")
+    pdf.cell(200, 10, txt="", ln=1, align="C")
+    pdf.cell(200, 10, txt="", ln=1, align="C")
+    pdf.set_font("Arial", size=16)
+    pdf.cell(200, 10, txt="pojemnosc samolotu: {}".format(PLANE_MAX), ln=1, align="L")
+    pdf.cell(200, 10, txt="\ndostawa: {}".format(necessary), ln=1, align="L")
     planes = math.ceil(necessary / PLANE_MAX)
-    print("liczba potrzebnych samolotów: {}".format(planes))
     MAX_WEIGHT = PLANE_MAX * planes - necessary
-    print("maxWeight: {}".format(MAX_WEIGHT))
+    pdf.cell(200, 10, txt="liczba potrzebnych samolotow: {}".format(planes), ln=1, align="L")
+    pdf.cell(200, 10, txt="Maksymalny ciezar: {}".format(MAX_WEIGHT), ln=1, align="L")
 
     while True:
         idx = 0
@@ -109,6 +117,19 @@ def Supply(request):
     for x in all_warehouses:
         print(x.name, x.how_many)
         x.save()
+    pdf.cell(200, 10, txt="", ln=1, align="C")
+    pdf.cell(200, 10, txt="", ln=1, align="C")
+    for low in all_warehouses:
+        res = "{}%, priorytet: {}, waga: {}, ponad stan: +{}%".format(low, low.weight, low.priority, low.how_many-low.max)
+        pdf.cell(200, 10, txt=res, ln=1, align="L")
+    pdf.cell(200, 10, txt="", ln=1, align="C")
+    pdf.cell(200, 10, txt="", ln=1, align="C")
+    pdf.cell(200, 10, txt="", ln=1, align="C")
+    pdf.cell(200, 10, txt="........................................        ".format(MAX_WEIGHT), ln=1, align="R")
+    pdf.set_font("Arial", size=8)
+    pdf.cell(200, 10, txt="(podpis operatora)                ", ln=1, align="R")
+    pdf.output("militaria/static/report.pdf")
+
     return render(request, 'militaria/supply.html', context)
 
 
