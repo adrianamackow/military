@@ -25,28 +25,14 @@
             </div>
         {% endfor %}
         <div class="box_all">
-        <div class="button-box-container">
-            <div class="button-box">
                 <form method="get" action="/militaria/add">
-                    <button type="submit">Dodaj</button>
+                    <button type="dashboard_btn"><img src="{% static "militaria/plus.png" %}" height=80px width=80px style="transform: rotate(90deg)"></button>
                 </form>
-            </div>
-            <div class="button-box">
-                <form method="get" action="/militaria/modify">
-                    <button type="submit">Modyfikuj</button>
-                </form>
-            </div>
-            <div class="button-box">
-                <form method="get" action="/militaria/delete">
-                    <button type="submit">Usun</button>
-                </form>
-            </div>
-        </div>
-            <div class="button-box-container2">
+                <span></span>
                 <form method="get" action="/militaria/supply">
-                    <button type="plane"><img src="{% static "militaria/plane.png" %}" height="50%" width="50%" style="transform: rotate(90deg)"></button>
+                    <button type="dashboard_btn"><img src="{% static "militaria/plane.png" %}" height=80px width=80px style="transform: rotate(90deg)"></button>
                 </form>
-            </div>
+
         </div>
     </div>
     {% endif %}

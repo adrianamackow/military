@@ -194,17 +194,30 @@ button[type=submit]
     display: inline;
 }
 
+button[type=dashboard_btn]
+{
+    width: 100%;
+    padding: 5px 5px 5px 5px;
+    margin: 8px 10px 10px 10px;
+    box-sizing: border-box;
+    border: 2px solid #F0FFF0;
+    border-radius: 10px;
+    flex: 1;
+    font-family: sans-serif;
+    cursor: pointer;
+    display: inline;
+}
+
 .box_all {
     display: flex;
-    justify-content: space-between;
+    align-content: space-between;
+    flex: 2
 }
 
-.button-box-container{
-    flex: 4;
-}
-
-.button-box-container2{
-    flex: 1;
+span {
+  width: 56%;
+  height: 50%;
+  background: black;
 }
 
 a:link {
@@ -221,4 +234,8 @@ a:hover {
 
 a:active {
   color: rgba(255, 255, 255, 0);
+}
+
+dashboard_buttons {
+
 }
