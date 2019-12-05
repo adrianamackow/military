@@ -8,6 +8,7 @@ Every Warehouse has three levels of state (low, medium, high)
 Every plane is weight limited (default: 100, can be changed in script)
 
 - [X] After supply - generating PDF raport with all informations
+- [ ] Heroku deploy
 
 ## Technologies
 Project created with:
