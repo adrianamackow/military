@@ -1,8 +1,15 @@
 from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
 from . import views
+from django.conf.urls import url, include
+from .serializers import *
 
-app_name = 'militaria'
+
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
+router.register(r'warehouses', WarehouseViewSet)
+
+# app_name = 'militaria'
 urlpatterns = [
     path('', views.index, name='index'),
     path('dashboard/', views.dashboardView, name='dashboard'),
@@ -12,4 +19,10 @@ urlpatterns = [
     path('add/', views.AddWarehouse, name="new"),
     path('supply/', views.Supply, name='supply'),
     path('contact/', views.contactView, name="contact"),
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
     ]
+
+
+
+
